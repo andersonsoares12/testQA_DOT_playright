@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Teste
 
 on: [push, pull_request]
 
