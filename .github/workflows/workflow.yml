@@ -10,5 +10,8 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v2
     
+    - name: Install Playwright Browsers
+      run: npx playwright install
+
     - name: Run Playwright tests
       run: npx playwright test
