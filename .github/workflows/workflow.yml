@@ -1,27 +1,36 @@
-name: Teste de CI com playright
+name: Teste de CI com Playwright
 
-on: push    # Execute este fluxo de trabalho sempre que um novo commit for enviado  ou pull request for aberto.
+on: push    # Execute este fluxo de trabalho sempre que um novo commit for enviado ou pull request for aberto.
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: API teste
-        uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        # after the test run completes store videos and any screenshots
-      - uses: actions/upload-artifact@v4
-        # add the line below to store screenshots only on failures
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
-      - uses: actions/upload-artifact@v4
-        with:
-          name: cypress-videos
-          path: cypress/videos
-          if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
+    playwright-run:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: '16'
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run Playwright tests
+              uses: microsoft/playwright-github-action@v1
+
+            - name: Upload Playwright screenshots
+              if: failure()
+              uses: actions/upload-artifact@v4
+              with:
+                name: playwright-screenshots
+                path: playwright/screenshots
+                if-no-files-found: ignore
+
+            - name: Upload Playwright videos
+              uses: actions/upload-artifact@v4
+              with:
+                name: playwright-videos
+                path: playwright/videos
+                if-no-files-found: ignore
