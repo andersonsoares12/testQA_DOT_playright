@@ -1,0 +1,22 @@
+{
+  "name": "teste_dot_playright",
+  "version": "1.0.0",
+  "description": "Teste feito no plaright para fins de aprendizado",
+  "homepage": "https://github.com/andersonsoares12/testQA_DOT_playright#readme",
+  "bugs": {
+    "url": "https://github.com/andersonsoares12/testQA_DOT_playright/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andersonsoares12/testQA_DOT_playright.git"
+  },
+  "license": "ISC",
+  "author": "Anderson Soares",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4"
+  }
+}
