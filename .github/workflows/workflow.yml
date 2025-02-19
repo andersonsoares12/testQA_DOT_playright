@@ -3,7 +3,7 @@ name: Playwright Tests
 on: [push, pull_request]
 
 jobs:
-  test:
+  Playwright-run:
     runs-on: ubuntu-latest
 
     steps:
