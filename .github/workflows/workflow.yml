@@ -16,5 +16,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - run: npm install
-    - run: npm test
+    - name: Cypress run
+      run: npx cypress run
