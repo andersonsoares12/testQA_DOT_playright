@@ -1,23 +1,58 @@
-Inside that directory, you can run several commands:
+# Projeto de Testes com Playwright
 
-  npx playwright test
-    Runs the end-to-end tests.
+Este projeto utiliza o Playwright para realizar testes end-to-end automatizados. O Playwright é uma biblioteca Node.js que permite a automação de navegadores para testar aplicações web.
 
-  npx playwright test --ui
-    Starts the interactive UI mode.
+## Pré-requisitos
 
-  npx playwright test --project=chromium
-    Runs the tests only on Desktop Chrome.
+Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Você pode baixar e instalar o Node.js a partir do [site oficial](https://nodejs.org/).
 
-  npx playwright test example
-    Runs the tests in a specific file.
+## Instalação
 
-  npx playwright test --debug
-    Runs the tests in debug mode.
+1. Clone o repositório para a sua máquina local:
+    ```bash
+    git clone https://github.com/andersonsoares12/testQA_DOT_playright.git
+    ```
 
-  npx playwright codegen
-    Auto generate tests with Codegen.
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd <NOME_DO_DIRETORIO>
+    ```
 
-We suggest that you begin by typing:
+3. Instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
 
-    npx playwright test
+4. Instale o Playwright e os navegadores necessários:
+    ```bash
+    npx playwright install
+    ```
+
+## Comandos Disponíveis
+
+Dentro do diretório do projeto, você pode executar vários comandos:
+
+- `npx playwright test`
+  - Executa os testes end-to-end.
+
+- `npx playwright test --ui`
+  - Inicia o modo interativo de UI.
+
+- `npx playwright test --project=chromium`
+  - Executa os testes apenas no Chrome Desktop.
+
+- `npx playwright test example`
+  - Executa os testes em um arquivo específico.
+
+- `npx playwright test --debug`
+  - Executa os testes no modo de depuração.
+
+- `npx playwright codegen`
+  - Gera testes automaticamente com o Codegen.
+
+## Como Começar
+
+Sugerimos que você comece executando o seguinte comando para rodar todos os testes end-to-end:
+
+```bash
+npx playwright test
