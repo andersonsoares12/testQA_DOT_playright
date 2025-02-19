@@ -9,14 +9,6 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
-              with:
-                node-version: '16'
-
-            - name: Install dependencies
-              run: npm install
-
             - name: Run Playwright tests
               uses: microsoft/playwright-github-action@v1
 
@@ -34,3 +26,5 @@ jobs:
                 name: playwright-videos
                 path: playwright/videos
                 if-no-files-found: ignore
+
+
